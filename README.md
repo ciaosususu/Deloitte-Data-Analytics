@@ -30,11 +30,13 @@ The repository is structured into multiple tasks, each addressing a different bu
 
 
 ## 📂 Repository Structure
+```
 Deloitte-Data-Analytics/
 │
-├── task1/ # Telemetry data analysis (Python + Tableau)
-├── task2/ # Gender pay equality analysis (Python + Excel)
+├── task1/   # Telemetry Data Analysis (Python + Tableau)
+├── task2/   # Gender Pay Equality Analysis (Python + Excel)
 └── README.md
+```
 
 
 Each task contains:
