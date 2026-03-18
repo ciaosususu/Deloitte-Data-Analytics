@@ -1,39 +1,70 @@
-# Deloitte Data Analytics Virtual Experience - Task 1
+# Deloitte Data Analytics Virtual Experience - Task 2
 
-## 📌 Project Overview
-This project is based on the Deloitte Data Analytics Virtual Experience on Forage.  
-The task involved analysing telemetry data collected from Daikibo's four factories across the globe.  
-I extended the original task by performing additional analysis using Python and creating visualisations to better understand machine downtime patterns.
+## 📌 Overview
+This project analyses gender pay equality across different factories and job roles at Daikibo Industrials.  
 
-## 🎯 Objectives
-- Identify which factory had the most machine downtime.
-- Determine which device type contributed the most to downtime in that factory.
-- Reproduce the analysis performed in Tableau using Python for better reproducibility and further insights.
+Using employee compensation data, an Equality Score was provided for each job role, ranging from -100 to +100 (where 0 represents perfect equality).  
+
+The objective of this analysis is to classify and visualise the level of gender pay inequality to help identify areas requiring attention.
+
+## 📊 Methodology
+
+### 1. Data Processing
+- Loaded the dataset from Excel
+- Cleaned column names and ensured data consistency
+
+### 2. Feature Engineering
+Created a new column: **`Equality Class`**, based on the Equality Score:
+
+- **Fair** → -10 ≤ score ≤ 10  
+- **Unfair** → -20 ≤ score < -10 OR 10 < score ≤ 20  
+- **Highly Discriminative** → score < -20 OR score > 20  
+
+### 3. Visualisation
+- Bar chart showing distribution of Equality Classes
+- Analysis performed using Python (Pandas & Matplotlib)
+
+
+## 📈 Key Insights
+
+- A significant number of roles fall into **Unfair** and **Highly Discriminative** categories  
+- This suggests notable gender pay imbalance across certain job roles  
+- Only a portion of roles achieve **Fair** equality levels  
+- Further investigation is needed to identify specific factories or roles driving inequality  
+
+
+## 📂 Project Structure
+
+- `data/`  
+  - Original dataset (`Equality Table.xlsx`)  
+  - Processed dataset (`Equality Table - Classified.xlsx`)  
+
+- `notebook/`  
+  - Jupyter Notebook containing full analysis  
+
+- `images/`  
+  - Visualisations of equality distribution  
+
 
 ## 🛠️ Tools & Skills
-- Python (Pandas, Matplotlib)
-- Jupyter Notebook
-- JSON data handling
-- Data Cleaning
-- Data Analysis & Visualisation
 
-## 📊 Analysis Summary
-- **Factory with the most downtime:** `Daikibo Factory Seiko (Osaka, Japan)`
-- **Device type with the most downtime in that factory:** `LaserWelder`
-- **Visualisations included:**
-  1. **Python analysis** – combined bar charts showing downtime per factory and per device type in the worst-performing factory (`factory_device_downtime_py.png` in `/images`)
-  2. **Tableau Dashboard** – interactive dashboard created in Tableau; screenshot included in `/images/task1_tab.png`
+- Python (Pandas, Matplotlib)  
+- Data Cleaning & Feature Engineering  
+- Data Visualisation  
+- Excel Data Handling  
 
-![Factory & Device Downtime Python](images/factory_device_downtime_py.png)
-![Factory & Device Downtime Tableau](images/task1_tab.png)
 
-### Key Insights
-- Most downtime occurs in Seiko, indicating potential maintenance or operational issues in that location.
-- LaserWelder machines are the most failure-prone in Seiko, suggesting focused attention for operational improvement.
-- These insights can help management prioritise maintenance efforts to minimise production delays.
+## 📎 Output
 
-## 💡 What I Learned
-- How to flatten nested JSON and clean raw data.
-- How to calculate downtime and aggregate metrics for analysis.
-- How to create clear and informative visualisations.
-- How to reproduce Tableau analysis in Python for better flexibility.
+- Classified dataset with Equality Class column  
+- Visual insights into gender pay distribution  
+- Reproducible analysis in Jupyter Notebook  
+
+
+## 🚀 Business Value
+
+This analysis helps organisations:
+
+- Identify areas of gender pay inequality  
+- Prioritise HR and policy interventions  
+- Improve fairness and compliance with equality standards  
